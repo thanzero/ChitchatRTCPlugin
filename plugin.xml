@@ -16,6 +16,31 @@
 
       <header-file src="src/ios/cordova-plugin-CallCordovaPlugin-Bridging-Header.h" />
       <source-file src="src/ios/CallCordovaPlugin.swift" />
+      
+      <source-file src="src/ios/SocketIO/SocketAckEmitter.swift" />
+      <source-file src="src/ios/SocketIO/SocketAckManager.swift" />
+      <source-file src="src/ios/SocketIO/SocketAnyEvent.swift" />
+      <source-file src="src/ios/SocketIO/SocketClientSpec.swift" />
+      <source-file src="src/ios/SocketIO/SocketEngine.swift" />
+      <source-file src="src/ios/SocketIO/SocketEngineClient.swift" />
+      <source-file src="src/ios/SocketIO/SocketEnginePacketType.swift" />
+      <source-file src="src/ios/SocketIO/SocketEnginePollable.swift" />
+      <source-file src="src/ios/SocketIO/SocketEngineSpec.swift" />
+      <source-file src="src/ios/SocketIO/SocketEngineWebsocket.swift" />
+      <source-file src="src/ios/SocketIO/SocketEventHandler.swift" />
+      <source-file src="src/ios/SocketIO/SocketFixUTF8.swift" />
+      <source-file src="src/ios/SocketIO/SocketIOClient.swift" />
+      <source-file src="src/ios/SocketIO/SocketIOClientOption.swift" />
+      <source-file src="src/ios/SocketIO/SocketIOClientStatus.swift" />
+      <source-file src="src/ios/SocketIO/SocketLogger.swift" />
+      <source-file src="src/ios/SocketIO/SocketPacket.swift" />
+      <source-file src="src/ios/SocketIO/SocketParsable.swift" />
+      <source-file src="src/ios/SocketIO/SocketStringReader.swift" />
+      <source-file src="src/ios/SocketIO/SocketTypes.swift" />
+      <source-file src="src/ios/SocketIO/SwiftRegex.swift" />
+      <source-file src="src/ios/SocketIO/WebSocket.swift" />
+
+
       <resource-file src="src/ios/CallStoryboard.storyboard" />
       <config-file target="config.xml" parent="/*">
         <feature name="CallCordovaPlugin">
