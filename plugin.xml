@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.than.cordova.CallCordovaPlugin" version="0.0.1" xmlns="http://www.phonegap.com/ns/plugins/1.0" >
+    <name>CallCordovaPlugin</name>
+    <author>Prathan B.</author>
+
+    <engines>
+      <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module name="CallCordovaPlugin" src="www/CallCordovaPlugin.js">
+        <clobbers target="cordova.plugins.CallCordovaPlugin" />
+    </js-module>
+
+    <platform name="ios">
+      <hook type="after_plugin_install" src="hooks/add_swift_support.js" />
+
+      <header-file src="src/ios/cordova-plugin-CallCordovaPlugin-Bridging-Header.h" />
+      <source-file src="src/ios/CallCordovaPlugin.swift" />
+      <resource-file src="src/ios/CallStoryboard.storyboard" />
+      <config-file target="config.xml" parent="/*">
+        <feature name="CallCordovaPlugin">
+          <param name="ios-package" value="CallCordovaPlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+    </platform>
+</plugin>
