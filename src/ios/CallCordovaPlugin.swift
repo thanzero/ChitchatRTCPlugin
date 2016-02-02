@@ -11,14 +11,14 @@ import UIKit
 @objc(CallCordovaPlugin) class CallCordovaPlugin : CDVPlugin {
 
     var command = CDVInvokedUrlCommand()
-    var callerId:String
+    var callerId:String = ""
     
     let socket = SocketIOClient(socketURL: NSURL(fileURLWithPath:"ws://203.113.25.44:3000"))
     
     func getCallerID(){
 
         socket.on("id") {data, ack in
-            self.callerId = data[0]
+            //self.callerId = data[0]
             print("Message for you! \(data[0])")
             self.sendPluginResponse(self.callerId)
             self.callUI()
