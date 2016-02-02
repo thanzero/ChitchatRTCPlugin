@@ -12,8 +12,15 @@ import UIKit
 
     var command = CDVInvokedUrlCommand()
     
+    let socket = SocketIOClient(socketURL: NSURL(fileURLWithPath:"ws://203.113.25.44:3000"))
+    
     func getCallerID(command: CDVInvokedUrlCommand){
         self.command = command
+        
+        socket.on("id") {data, ack in
+            print("Message for you! \(data[0])")
+        }
+        socket.connect()
         
     }
     

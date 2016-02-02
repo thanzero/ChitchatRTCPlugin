@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.than.cordova.CallCordovaPlugin" version="0.0.1" xmlns="http://www.phonegap.com/ns/plugins/1.0" >
+<plugin id="cordova.CallCordovaPlugin" version="0.0.1" xmlns="http://www.phonegap.com/ns/plugins/1.0" >
     <name>CallCordovaPlugin</name>
     <author>Prathan B.</author>
 
@@ -16,6 +16,7 @@
 
       <header-file src="src/ios/cordova-plugin-CallCordovaPlugin-Bridging-Header.h" />
       <source-file src="src/ios/CallCordovaPlugin.swift" />
+      <source-file src="src/ios/FreeCallViewController.swift" />
       
       <source-file src="src/ios/SocketIO/SocketAckEmitter.swift" target-dir="SocketIO" />
       <source-file src="src/ios/SocketIO/SocketAckManager.swift" target-dir="SocketIO" />
@@ -42,6 +43,7 @@
 
 
       <resource-file src="src/ios/CallStoryboard.storyboard" />
+      
       <config-file target="config.xml" parent="/*">
         <feature name="CallCordovaPlugin">
           <param name="ios-package" value="CallCordovaPlugin" />

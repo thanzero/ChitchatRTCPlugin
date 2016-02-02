@@ -24,6 +24,11 @@ class FreeCallViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func doneClicked(sender: UIBarButtonItem) {
+        print("clicked!")
+        dismissViewControllerAnimated(true, completion: closeCallback)
+    }
+    
     @IBAction func Close(sender: UIButton) {
         
         dismissViewControllerAnimated(true, completion: closeCallback)

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Free Call Controller-->
         <scene sceneID="Hze-Sj-FD4">
             <objects>
-                <viewController storyboardIdentifier="FreeCallViewController" id="hv0-uL-hNh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FreeCallViewController" id="hv0-uL-hNh" customClass="FreeCallController" customModule="gallery" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pBE-MS-379"/>
                         <viewControllerLayoutGuide type="bottom" id="9kZ-8F-mgX"/>
@@ -17,25 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bgmodal1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rw8-vc-ygs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangup" translatesAutoresizingMaskIntoConstraints="NO" id="DxO-N0-IRQ">
-                                <rect key="frame" x="257" y="282" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="EXV-Ee-4GX"/>
-                                    <constraint firstAttribute="width" constant="50" id="e2R-z8-HSa"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08b-kB-tym">
+                                <rect key="frame" x="316" y="260" width="37" height="30"/>
+                                <state key="normal" title="close"/>
+                                <connections>
+                                    <action selector="Close:" destination="hv0-uL-hNh" eventType="touchUpInside" id="xtf-Cg-y6P"/>
+                                    <action selector="close:" destination="hv0-uL-hNh" eventType="touchUpInside" id="6j8-nt-dnA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkJ-mj-RKv">
+                                <rect key="frame" x="248" y="260" width="30" height="30"/>
+                                <state key="normal" title="call"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="rw8-vc-ygs" firstAttribute="leading" secondItem="PrQ-07-ONa" secondAttribute="leading" id="7og-jH-4qt"/>
-                            <constraint firstItem="DxO-N0-IRQ" firstAttribute="centerX" secondItem="PrQ-07-ONa" secondAttribute="centerX" constant="-18" id="8MU-dw-6KA"/>
-                            <constraint firstItem="DxO-N0-IRQ" firstAttribute="top" secondItem="pBE-MS-379" secondAttribute="bottom" constant="262" id="HuT-XE-X6I"/>
-                            <constraint firstItem="rw8-vc-ygs" firstAttribute="top" secondItem="PrQ-07-ONa" secondAttribute="top" id="TWy-IX-cHW"/>
-                            <constraint firstItem="rw8-vc-ygs" firstAttribute="bottom" secondItem="9kZ-8F-mgX" secondAttribute="top" id="eZK-IH-qNu"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxi-Rg-MNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,8 +38,4 @@
             <point key="canvasLocation" x="312" y="312"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="bgmodal1.jpg" width="1920" height="1200"/>
-        <image name="hangup" width="144" height="144"/>
-    </resources>
 </document>
