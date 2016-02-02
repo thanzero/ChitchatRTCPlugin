@@ -14,9 +14,8 @@ import UIKit
     
     let socket = SocketIOClient(socketURL: NSURL(fileURLWithPath:"ws://203.113.25.44:3000"))
     
-    func getCallerID(command: CDVInvokedUrlCommand){
-        self.command = command
-        
+    func getCallerID(){
+
         socket.on("id") {data, ack in
             print("Message for you! \(data[0])")
         }
@@ -25,8 +24,14 @@ import UIKit
     }
     
     func freeCall(command:CDVInvokedUrlCommand){
+        
+        
         self.command = command
         
+        print(self.command)
+        
+        self.getCallerID()
+
         let storyboard = UIStoryboard(name: "CallStoryboard", bundle: nil)
         
         let freecallNav = storyboard.instantiateViewControllerWithIdentifier("FreeCallViewController") as! FreeCallViewController
@@ -45,6 +50,10 @@ import UIKit
         viewController!.modalTransitionStyle = .CoverVertical
         viewController!.presentViewController(freecallNav, animated: true, completion: nil)
         
+    }
+
+    func videoCall(command:CDVInvokedUrlCommand){
+        self.command = command
     }
     
     func modalDidClose() {

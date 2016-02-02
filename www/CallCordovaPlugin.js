@@ -8,8 +8,8 @@ swift.prototype.freeCall = function (succ,error,type,option) {
 	return exec(succ, error, "CallCordovaPlugin", "freeCall");
 };
 
-swift.prototype.getCallerID = function (succ,error,type,option) {
-	return exec(succ, error, "CallCordovaPlugin", "getCallerID");
+swift.prototype.videoCall = function (succ,error,type,option) {
+	return exec(succ, error, "CallCordovaPlugin", "videoCall");
 };
 
 module.exports = new swift();
