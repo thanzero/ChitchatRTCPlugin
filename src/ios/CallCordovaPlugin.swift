@@ -29,9 +29,10 @@ import UIKit
             
             let caller_id:String? = data[0] as? String
             
-            let result = CDVPluginResult(status: CDVCommandStatus_OK , messageAsString:  caller_id)
-            
-            self.commandDelegate!.sendPluginResult(result, callbackId: self.command.callbackId)
+            self.sendPluginResponse(caller_id!)
+        }
+        
+        self.socket.on("readyToStream"){data ,ack in
             
         }
         
@@ -55,7 +56,7 @@ import UIKit
         
         let freecallNav = storyboard.instantiateViewControllerWithIdentifier("FreeCallViewController") as! FreeCallViewController
         
-        freecallNav.closeCallback = modalDidClose
+        //freecallNav.closeCallback = modalDidClose
         
         var presentationStyle: UIModalPresentationStyle
         if #available(iOS 8, *) {
@@ -70,26 +71,9 @@ import UIKit
         viewController!.presentViewController(freecallNav, animated: true, completion: nil)
     }
     
-    func modalDidClose() {
-        sendPluginResponse(responseDict(.Normal, index: nil))
-    }
-    
-    private func sendPluginResponse(response: [String: AnyObject]) {
-        
-        let result = CDVPluginResult(status: CDVCommandStatus_OK , messageAsDictionary: response)
-        self.commandDelegate!.sendPluginResult(result, callbackId: command.callbackId)
-    }
-    
-    private func responseDict(responseType: Response, index: Int?) -> [String: AnyObject] {
-        var dict = [String: AnyObject]()
-        dict["action"] = responseType.rawValue
-        if let index = index { dict["index"] = index }
-        return dict
-    }
-    
-    private enum Response: String {
-        case Normal = "none"
-        case Delete = "delete"
+    private func sendPluginResponse(response: String) {
+        let result = CDVPluginResult(status: CDVCommandStatus_OK , messageAsString: response)
+        self.commandDelegate!.sendPluginResult(result, callbackId: self.command.callbackId)
     }
     
 }
