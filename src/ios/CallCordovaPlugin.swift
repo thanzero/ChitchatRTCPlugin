@@ -9,47 +9,47 @@
 import UIKit
 
 @objc(CallCordovaPlugin) class CallCordovaPlugin : CDVPlugin {
-
-    var command = CDVInvokedUrlCommand()
-    var callerId:String = ""
     
-    let socket = SocketIOClient(socketURL: NSURL(fileURLWithPath:"ws://203.113.25.44:3000"))
+    var command = CDVInvokedUrlCommand()
+    
+    //    let socket = SocketIOClient(socketURL: NSURL(fileURLWithPath:"ws://203.113.25.66:3000") ,options:["log": true])
+    
+    let socket = SocketIOClient(socketURL: NSURL(string:"ws://203.113.25.44:3000")! )
+    
+    //    let socket = SocketIOClient(socketURL: "203.113.25.66:3000", options:["log": true])
+    
     
     func getCallerID(){
-
-        socket.on("id") {data, ack in
-            //self.callerId = data[0]
-            print("Message for you! \(data[0])")
-            self.sendPluginResponse(self.callerId)
-            self.callUI()
+        
+        self.socket.on("connect") {data, ack in
+            print("Message for you! \(data)")
+        }
+        
+        self.socket.on("id") {data, ack in
+            
+            let caller_id:String? = data[0] as? String
+            
+            let result = CDVPluginResult(status: CDVCommandStatus_OK , messageAsString:  caller_id)
+            
+            self.commandDelegate!.sendPluginResult(result, callbackId: self.command.callbackId)
             
         }
+        
+        self.socket.onAny {print("Got event: \($0.event), with items: \($0.items)")}
+        
         socket.connect()
         
     }
     
     func freeCall(command:CDVInvokedUrlCommand){
         
+        self.command = command
         
-        /*
-var message = command.arguments[0] as String
-
-message = message.uppercaseString // Prove the plugin is actually doing something
-
-var pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAsString: message)
-commandDelegate.sendPluginResult(pluginResult, callbackId:command.callbackId)
-*/
-
-        self.command = command
-        self.getCallerID()
-    }
-
-    func videoCall(command:CDVInvokedUrlCommand){
-        self.command = command
+        getCallerID()
+        freeCallUI()
     }
     
-    
-    func callUI()
+    func freeCallUI()
     {
         let storyboard = UIStoryboard(name: "CallStoryboard", bundle: nil)
         
@@ -71,14 +71,12 @@ commandDelegate.sendPluginResult(pluginResult, callbackId:command.callbackId)
     }
     
     func modalDidClose() {
-        sendPluginResponse("id")
+        sendPluginResponse(responseDict(.Normal, index: nil))
     }
     
-    //private func sendPluginResponse(response: [String: AnyObject]) {
-    private func sendPluginResponse(response: String)
-    {
-        //let result = CDVPluginResult(status: CDVCommandStatus_OK , messageAsDictionary: response)
-        let result = CDVPluginResult(status: CDVCommandStatus_OK , messageAsString: response)
+    private func sendPluginResponse(response: [String: AnyObject]) {
+        
+        let result = CDVPluginResult(status: CDVCommandStatus_OK , messageAsDictionary: response)
         self.commandDelegate!.sendPluginResult(result, callbackId: command.callbackId)
     }
     
@@ -93,5 +91,5 @@ commandDelegate.sendPluginResult(pluginResult, callbackId:command.callbackId)
         case Normal = "none"
         case Delete = "delete"
     }
-
+    
 }
