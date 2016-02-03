@@ -12,12 +12,7 @@ import UIKit
     
     var command = CDVInvokedUrlCommand()
     
-    //    let socket = SocketIOClient(socketURL: NSURL(fileURLWithPath:"ws://203.113.25.66:3000") ,options:["log": true])
-    
     let socket = SocketIOClient(socketURL: NSURL(string:"ws://203.113.25.44:3000")! )
-    
-    //    let socket = SocketIOClient(socketURL: "203.113.25.66:3000", options:["log": true])
-    
     
     func getCallerID(){
         
@@ -56,7 +51,7 @@ import UIKit
         
         let freecallNav = storyboard.instantiateViewControllerWithIdentifier("FreeCallViewController") as! FreeCallViewController
         
-        //freecallNav.closeCallback = modalDidClose
+        freecallNav.closeCallback = endCall
         
         var presentationStyle: UIModalPresentationStyle
         if #available(iOS 8, *) {
@@ -74,6 +69,10 @@ import UIKit
     private func sendPluginResponse(response: String) {
         let result = CDVPluginResult(status: CDVCommandStatus_OK , messageAsString: response)
         self.commandDelegate!.sendPluginResult(result, callbackId: self.command.callbackId)
+    }
+    
+    private func endCall(){
+        
     }
     
 }
