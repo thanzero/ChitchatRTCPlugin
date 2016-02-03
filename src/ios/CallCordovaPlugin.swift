@@ -38,12 +38,22 @@ import UIKit
     }
     
     func freeCall(command:CDVInvokedUrlCommand){
-        
         self.command = command
-        
         getCallerID()
         freeCallUI()
     }
+
+    func videoCall(command:CDVInvokedUrlCommand){
+        self.command = command
+    }
+
+    func endCall(command:CDVInvokedUrlCommand){
+        self.command = command
+    }
+
+    func lineBusy(command:CDVInvokedUrlCommand){
+        self.command = command
+    }    
     
     func freeCallUI()
     {

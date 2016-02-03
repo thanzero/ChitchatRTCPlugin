@@ -12,4 +12,8 @@ swift.prototype.videoCall = function (succ,error,type,option) {
 	return exec(succ, error, "CallCordovaPlugin", "videoCall");
 };
 
+swift.prototype.endCall = function (succ,error,type,option) {
+	return exec(succ, error, "CallCordovaPlugin", "endCall");
+};
+
 module.exports = new swift();
