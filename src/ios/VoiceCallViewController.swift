@@ -18,7 +18,6 @@ class VoiceCallViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let audioSession:AVAudioSession = AVAudioSession.sharedInstance()
     }
     
     override func didReceiveMemoryWarning() {
