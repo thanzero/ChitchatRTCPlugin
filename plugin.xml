@@ -13,12 +13,18 @@
 
     <platform name="ios">
       <hook type="after_plugin_install" src="hooks/add_swift_support.js" />
-
-      <header-file src="src/ios/cordova-plugin-ChitchatRTC-Bridging-Header.h" />
+      
       <source-file src="src/ios/ChitchatRTC.swift" />
       <source-file src="src/ios/VoiceCallViewController.swift" />
       <source-file src="src/ios/VideoCallViewController.swift" />
+      
+      <source-file src="src/ios/PCObserver.swift" />
+      <source-file src="src/ios/Session.swift" />
+      <source-file src="src/ios/Config.swift" />
+      <source-file src="src/ios/SessionDescriptionDelegate.swift" />
+
       <resource-file src="src/ios/Chitchat.storyboard" />
+      <header-file src="src/ios/cordova-plugin-ChitchatRTC-Bridging-Header.h" />
 
       <source-file src="src/ios/SocketIO/SocketAckEmitter.swift" target-dir="SocketIO" />
       <source-file src="src/ios/SocketIO/SocketAckManager.swift" target-dir="SocketIO" />
@@ -42,6 +48,59 @@
       <source-file src="src/ios/SocketIO/SocketTypes.swift" target-dir="SocketIO" />
       <source-file src="src/ios/SocketIO/SwiftRegex.swift" target-dir="SocketIO" />
       <source-file src="src/ios/SocketIO/WebSocket.swift" target-dir="SocketIO" />
+
+      <source-file src="src/ios/libjingle_peerconnection/libWebRTC.a" framework="true" />
+
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCAudioSource.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCAudioTrack.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCDataChannel.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCEAGLVideoView.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCI420Frame.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCICECandidate.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCICEServer.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCMediaConstraints.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCMediaSource.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCMediaStream.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCMediaStreamTrack.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCNSGLVideoView.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCOpenGLVideoRenderer.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCPair.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCPeerConnection.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCPeerConnectionDelegate.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCPeerConnectionFactory.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCSessionDescription.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCSessionDescriptionDelegate.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCStatsDelegate.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCStatsReport.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCTypes.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCVideoCapturer.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCVideoRenderer.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCVideoSource.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCVideoTrack.h" />
+
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCAVFoundationVideoSource.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCPeerConnectionInterface.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCFileLogger.h" />
+      <header-file src="src/ios/libjingle_peerconnection/Headers/RTCLogging.h" />
+      
+
+      <framework src="libc++.dylib" />
+      <framework src="libstdc++.dylib" />
+      <framework src="libsqlite3.0.dylib" />  
+      <framework src="OpenGLES.framework" />
+      <framework src="CoreVideo.framework" />
+      <framework src="CoreMedia.framework" />
+      <framework src="CoreAudio.framework" />
+      <framework src="AVFoundation.framework" />
+      <framework src="QuartzCore.framework" />    
+      <framework src="AssetsLibrary.framework" />
+      <framework src="CoreGraphics.framework" />      
+      <framework src="MobileCoreServices.framework" />
+      <framework src="CoreLocation.framework" />
+      <framework src="AudioToolbox.framework" />
+      <framework src="GLKit.framework" />
+
+      
 
       <config-file target="config.xml" parent="/*">
         <feature name="ChitchatRTC">
