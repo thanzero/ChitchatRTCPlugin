@@ -49,6 +49,23 @@
       <source-file src="src/ios/SocketIO/SwiftRegex.swift" target-dir="SocketIO" />
       <source-file src="src/ios/SocketIO/WebSocket.swift" target-dir="SocketIO" />
 
+      <framework src="libc++.dylib" />
+      <framework src="libstdc++.dylib" />
+      <framework src="libsqlite3.0.dylib" />  
+      <framework src="OpenGLES.framework" />
+      <framework src="CoreVideo.framework" />
+      <framework src="CoreMedia.framework" />
+      <framework src="CoreAudio.framework" />
+      <framework src="AVFoundation.framework" />
+      <framework src="QuartzCore.framework" />    
+      <framework src="AssetsLibrary.framework" />
+      <framework src="CoreGraphics.framework" />      
+      <framework src="MobileCoreServices.framework" />
+      <framework src="CoreLocation.framework" />
+      <framework src="AudioToolbox.framework" />
+      <framework src="GLKit.framework" />
+
+      
 
       <config-file target="config.xml" parent="/*">
         <feature name="ChitchatRTC">
