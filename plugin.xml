@@ -26,50 +26,6 @@
       <resource-file src="src/ios/Chitchat.storyboard" />
       <header-file src="src/ios/cordova-plugin-ChitchatRTC-Bridging-Header.h" />
 
-      <source-file src="src/ios/SocketIO/SocketAckEmitter.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketAckManager.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketAnyEvent.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketClientSpec.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketEngine.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketEngineClient.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketEnginePacketType.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketEnginePollable.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketEngineSpec.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketEngineWebsocket.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketEventHandler.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketFixUTF8.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketIOClient.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketIOClientOption.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketIOClientStatus.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketLogger.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketPacket.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketParsable.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketStringReader.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SocketTypes.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/SwiftRegex.swift" target-dir="SocketIO" />
-      <source-file src="src/ios/SocketIO/WebSocket.swift" target-dir="SocketIO" />
-
-      <source-file src="src/ios/Haneke/Cache.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/CGSize+Swift.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/CryptoSwiftMD5.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/Data.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/DiskCache.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/DiskFetcher.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/Fetch.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/Fetcher.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/Format.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/Haneke.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/Log.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/NetworkFetcher.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/NSFileManager+Haneke.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/NSHTTPURLResponse+Haneke.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/NSURLResponse+Haneke.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/String+Haneke.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/UIButton+Haneke.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/UIImage+Haneke.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/UIImageView+Haneke.swift" target-dir="Haneke" />
-      <source-file src="src/ios/Haneke/UIView+Haneke.swift" target-dir="Haneke" />
-
 
       <config-file target="config.xml" parent="/*">
         <feature name="ChitchatRTC">
