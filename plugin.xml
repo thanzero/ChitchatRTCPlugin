@@ -24,6 +24,7 @@
       <source-file src="src/ios/SessionDescriptionDelegate.swift" />
 
       <resource-file src="src/ios/Chitchat.storyboard" />
+      <resource-file src="iphone.mp3" />
       <header-file src="src/ios/cordova-plugin-ChitchatRTC-Bridging-Header.h" />
 
 
