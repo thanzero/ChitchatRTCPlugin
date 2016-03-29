@@ -9,7 +9,7 @@
 import Foundation
 
 
-class PCObserver : NSObject, RTCPeerConnectionDelegate {
+class PCObserver : NSObject , RTCPeerConnectionDelegate {
 
     var session: Session
     
@@ -21,12 +21,7 @@ class PCObserver : NSObject, RTCPeerConnectionDelegate {
         addedStream stream: RTCMediaStream!) {
             
         print("PCO onAddStream.")
-        /*
-        dispatch_async(dispatch_get_main_queue()) {
-            if stream.videoTracks.count > 0 {
-                self.session.addVideoTrack(stream.videoTracks[0] as! RTCVideoTrack)
-            }
-        }*/
+
     }
     
     func peerConnection(peerConnection: RTCPeerConnection!,
@@ -70,5 +65,4 @@ class PCObserver : NSObject, RTCPeerConnectionDelegate {
     func peerConnectionOnRenegotiationNeeded(peerConnection: RTCPeerConnection!) {
         print("PCO onRenegotiationNeeded.")
     }
-    
 }

@@ -8,28 +8,32 @@
 
 import Foundation
 
-class Session {
+class Session{
+    /*
+    var plugin: ChitchatRTC
     var config: SessionConfig
     var constraints: RTCMediaConstraints
     var peerConnection: RTCPeerConnection!
+    
     var pcObserver: PCObserver!
     var queuedRemoteCandidates: [RTCICECandidate]?
     var peerConnectionFactory: RTCPeerConnectionFactory
     var callbackId: String
     var stream: RTCMediaStream?
     var videoTrack: RTCVideoTrack?
-    var sessionKey: String
+    //var sessionKey: String
     
-    init(
+
+    init(plugin: ChitchatRTC,
         peerConnectionFactory: RTCPeerConnectionFactory,
-        //config: SessionConfig,
-        callbackId: String,
-        sessionKey: String) {
+        config: SessionConfig,
+        callbackId: String) {
+            
+            self.plugin = plugin
             self.queuedRemoteCandidates = []
             self.config = config
             self.peerConnectionFactory = peerConnectionFactory
             self.callbackId = callbackId
-            self.sessionKey = sessionKey
             
             // initialize basic media constraints
             self.constraints = RTCMediaConstraints(
@@ -47,19 +51,11 @@ class Session {
     
     func call() {
         // create a list of ICE servers
-        var iceServers: [RTCICEServer] = []
-        iceServers.append(RTCICEServer(
-            URI: NSURL(string: "stun:stun.l.google.com:19302"),
-            username: "",
-            password: ""))
-        
-        iceServers.append(RTCICEServer(
-            URI: NSURL(string: self.config.turn.host),
-            username: self.config.turn.username,
-            password: self.config.turn.password))
+        let iceServers: [RTCICEServer] = self.plugin.getIceServers()
         
         // initialize a PeerConnection
         self.pcObserver = PCObserver(session: self)
+        
         self.peerConnection =
             peerConnectionFactory.peerConnectionWithICEServers(iceServers,
                 constraints: self.constraints,
@@ -74,6 +70,7 @@ class Session {
                 constraints: constraints)
         }
     }
+    
     
     func createOrUpdateStream() {
         if self.stream != nil {
@@ -104,6 +101,7 @@ class Session {
         self.peerConnection.addStream(self.stream)
     }
     
+ 
     func receiveMessage(message: String) {
         // Parse the incoming JSON message.
         var error : NSError?
@@ -162,6 +160,9 @@ class Session {
     }
     
     func disconnect(sendByeMessage: Bool) {
+        
+        
+        /*
         if self.videoTrack != nil {
             self.removeVideoTrack(self.videoTrack!)
         }
@@ -175,7 +176,7 @@ class Session {
                 let data = try? NSJSONSerialization.dataWithJSONObject(json,
                     options: NSJSONWritingOptions())
                 
-                self.sendMessage(data!)
+                //self.sendMessage(data!)
             }
             
             self.peerConnection.close()
@@ -190,18 +191,19 @@ class Session {
         let data = try? NSJSONSerialization.dataWithJSONObject(json,
             options: NSJSONWritingOptions())
         
-        self.sendMessage(data!)
+        //self.sendMessage(data!)
         
-        self.plugin.onSessionDisconnect(self.sessionKey)
+        //self.plugin.onSessionDisconnect(self.sessionKey)
+        */
     }
     
     func addVideoTrack(videoTrack: RTCVideoTrack) {
         self.videoTrack = videoTrack
-        self.plugin.addRemoteVideoTrack(videoTrack)
+        //self.plugin.addRemoteVideoTrack(videoTrack)
     }
     
     func removeVideoTrack(videoTrack: RTCVideoTrack) {
-        self.plugin.removeRemoteVideoTrack(videoTrack)
+        //self.plugin.removeRemoteVideoTrack(videoTrack)
     }
     
     func preferISAC(sdpDescription: String) -> String {
@@ -257,6 +259,8 @@ class Session {
         return lines.joinWithSeparator("\r\n")
     }
     
+    
+    
     func firstMatch(pattern: NSRegularExpression, string: String) -> String? {
         let nsString = string as NSString
         
@@ -270,8 +274,6 @@ class Session {
         
         return nsString.substringWithRange(result!.rangeAtIndex(1))
     }
-    
-    func sendMessage(message: NSData) {
-        self.plugin.sendMessage(self.callbackId, message: message)
-    }
+
+ */
 }

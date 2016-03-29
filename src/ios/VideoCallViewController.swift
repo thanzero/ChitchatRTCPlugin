@@ -11,6 +11,8 @@ import UIKit
 
 class VideoCallViewController: UIViewController {
     
+    @IBOutlet weak var remoteView:RTCEAGLVideoView?
+    @IBOutlet weak var localView:RTCEAGLVideoView?
     
     var closeCallback: (() -> Void)?
     

@@ -49,6 +49,27 @@
       <source-file src="src/ios/SocketIO/SwiftRegex.swift" target-dir="SocketIO" />
       <source-file src="src/ios/SocketIO/WebSocket.swift" target-dir="SocketIO" />
 
+      <source-file src="src/ios/Haneke/Cache.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/CGSize+Swift.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/CryptoSwiftMD5.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/Data.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/DiskCache.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/DiskFetcher.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/Fetch.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/Fetcher.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/Format.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/Haneke.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/Log.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/NetworkFetcher.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/NSFileManager+Haneke.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/NSHTTPURLResponse+Haneke.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/NSURLResponse+Haneke.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/String+Haneke.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/UIButton+Haneke.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/UIImage+Haneke.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/UIImageView+Haneke.swift" target-dir="Haneke" />
+      <source-file src="src/ios/Haneke/UIView+Haneke.swift" target-dir="Haneke" />
+
 
       <config-file target="config.xml" parent="/*">
         <feature name="ChitchatRTC">
