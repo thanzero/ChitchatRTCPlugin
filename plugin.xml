@@ -40,7 +40,6 @@
       <source-file src="libs/ios/SocketIO/SocketEngineSpec.swift" target-dir="SocketIO" />
       <source-file src="libs/ios/SocketIO/SocketEngineWebsocket.swift" target-dir="SocketIO" />
       <source-file src="libs/ios/SocketIO/SocketEventHandler.swift" target-dir="SocketIO" />
-      <source-file src="libs/ios/SocketIO/SocketFixUTF8.swift" target-dir="SocketIO" />
       <source-file src="libs/ios/SocketIO/SocketIOClient.swift" target-dir="SocketIO" />
       <source-file src="libs/ios/SocketIO/SocketIOClientOption.swift" target-dir="SocketIO" />
       <source-file src="libs/ios/SocketIO/SocketIOClientStatus.swift" target-dir="SocketIO" />
