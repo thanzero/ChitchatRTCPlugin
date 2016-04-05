@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="chitchat-ChitchatRTC" version="0.0.1" xmlns="http://www.phonegap.com/ns/plugins/1.0" >
+<plugin id="chitchat-ChitchatRTC" version="0.0.2" xmlns="http://www.phonegap.com/ns/plugins/1.0" >
     <name>ChitchatRTC</name>
     <author>Prathan B.</author>
 
@@ -12,24 +12,8 @@
     </js-module>
 
     <platform name="ios">
-
-      <framework src="libstdc++.dylib" />
-      <framework src="libsqlite3.0.dylib" />  
-      <framework src="OpenGLES.framework" />
-      <framework src="CoreVideo.framework" />
-      <framework src="CoreMedia.framework" />
-      <framework src="CoreAudio.framework" />
-      <framework src="AVFoundation.framework" />
-      <framework src="QuartzCore.framework" />    
-      <framework src="AssetsLibrary.framework" />
-      <framework src="CoreGraphics.framework" />      
-      <framework src="MobileCoreServices.framework" />
-      <framework src="CoreLocation.framework" />
-      <framework src="AudioToolbox.framework" />
-      <framework src="GLKit.framework" />
-
       <hook type="after_plugin_install" src="hooks/add_swift_support.js" />
-      
+
       <source-file src="src/ios/ChitchatRTC.swift" />
       <source-file src="src/ios/ReceiveCallController.swift" />
       <source-file src="src/ios/VoiceCallViewController.swift" />
@@ -42,7 +26,7 @@
 
       <resource-file src="src/ios/Chitchat.storyboard" />
       <resource-file src="iphone.mp3" />
-      
+
       <header-file src="src/ios/cordova-plugin-ChitchatRTC-Bridging-Header.h" />
 
       <source-file src="libs/ios/SocketIO/SocketAckEmitter.swift" target-dir="SocketIO" />
@@ -119,6 +103,21 @@
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCVideoTrack.h" />
 
       <source-file src="libs/ios/libjingle_peerconnection/libWebRTC.a" framework="true" />
+
+      <framework src="libstdc++.dylib" />
+      <framework src="libsqlite3.0.dylib" />  
+      <framework src="OpenGLES.framework" />
+      <framework src="CoreVideo.framework" />
+      <framework src="CoreMedia.framework" />
+      <framework src="CoreAudio.framework" />
+      <framework src="AVFoundation.framework" />
+      <framework src="QuartzCore.framework" />    
+      <framework src="AssetsLibrary.framework" />
+      <framework src="CoreGraphics.framework" />      
+      <framework src="MobileCoreServices.framework" />
+      <framework src="CoreLocation.framework" />
+      <framework src="AudioToolbox.framework" />
+      <framework src="GLKit.framework" />
 
       <config-file target="config.xml" parent="/*">
         <feature name="ChitchatRTC">
