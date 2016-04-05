@@ -103,12 +103,13 @@
 
       <source-file src="libs/ios/libjingle_peerconnection/libWebRTC.a" framework="true" />
 
-      <framework src="libstdc++.dylib" />
+      <framework src="libc++.tbd" />
       <framework src="libsqlite3.0.dylib" />  
-      <framework src="OpenGLES.framework" />
+      
       <framework src="CoreVideo.framework" />
       <framework src="CoreMedia.framework" />
       <framework src="CoreAudio.framework" />
+      <framework src="OpenGLES.framework" />
       <framework src="AVFoundation.framework" />
       <framework src="QuartzCore.framework" />    
       <framework src="AssetsLibrary.framework" />
@@ -116,6 +117,7 @@
       <framework src="MobileCoreServices.framework" />
       <framework src="CoreLocation.framework" />
       <framework src="AudioToolbox.framework" />
+      <framework src="VideoToolbox.framework" />
       <framework src="GLKit.framework" />
 
       <config-file target="config.xml" parent="/*">
