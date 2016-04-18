@@ -85,16 +85,12 @@
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCMediaSource.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCMediaStream.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCMediaStreamTrack.h" />
-      <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCNSGLVideoView.h" />
-      <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCOpenGLVideoRenderer.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCPair.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCPeerConnection.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCPeerConnectionDelegate.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCPeerConnectionFactory.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCSessionDescription.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCSessionDescriptionDelegate.h" />
-      <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCStatsDelegate.h" />
-      <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCStatsReport.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCTypes.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCVideoCapturer.h" />
       <header-file src="libs/ios/libjingle_peerconnection/Headers/RTCVideoRenderer.h" />
