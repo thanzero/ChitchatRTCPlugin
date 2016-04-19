@@ -41,6 +41,7 @@ class ChitchatRTC: CDVPlugin  , RTCSessionDescriptionDelegate , RTCPeerConnectio
     var receiveCallView:ReceiveCallViewController! = nil
     
     var contactId = [String:String]()
+    var END_CALL_COMMAND_ID = "";
     
     override func pluginInitialize() {
         super.pluginInitialize()
@@ -203,15 +204,20 @@ class ChitchatRTC: CDVPlugin  , RTCSessionDescriptionDelegate , RTCPeerConnectio
     }
     
     func waitForEndCall(command: CDVInvokedUrlCommand) {
+        print("waitForEndCall")
+        print(command)
         self.waitforEndCallCommand = command
     }
     
     func endCall(command: CDVInvokedUrlCommand) {
         
-        self.command = command
+        self.command = command;
+       // self.END_CALL_COMMAND_ID = command.callbackId;
         
-        if self.socket.status == .Connected{
-            self.socket.disconnect()
+        if(self.socket != nil) {
+            if self.socket.status == .Connected{
+                self.socket.disconnect()
+            }
         }
         
         print("on endcall from callee")
@@ -240,20 +246,29 @@ class ChitchatRTC: CDVPlugin  , RTCSessionDescriptionDelegate , RTCPeerConnectio
         
     }
     
-    func hangUpCallback(){
-
-        print("hangup callback event")
+    func hangUpCallback() {
+        print("hangup")
         
-        if self.socket.status == .Connected{
+        if self.socket.status == .Connected {
             self.socket.disconnect()
         }
         
-        self.sendMessage(self.waitforEndCallCommand.callbackId, message: "endCall")
         
+        
+        dispatch_async(dispatch_get_main_queue(),{
+            //code
+            self.viewController?.presentedViewController?.dismissViewControllerAnimated(false, completion: nil)
+        });
+        
+        
+        
+        self.sendMessage(self.waitforEndCallCommand.callbackId, message: "endCall")
     }
     
     func sendMessage(callbackId: String, message: String) {
 
+        print(callbackId, message);
+        
         let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAsString: message)
         pluginResult.setKeepCallbackAsBool(true);
         
@@ -473,7 +488,7 @@ class ChitchatRTC: CDVPlugin  , RTCSessionDescriptionDelegate , RTCPeerConnectio
             }else{
                 print("didSetSessionDescriptionWithError: " + error.description)
             }
-            
+
     }
 
     /**
@@ -489,6 +504,10 @@ class ChitchatRTC: CDVPlugin  , RTCSessionDescriptionDelegate , RTCPeerConnectio
         iceConnectionChanged newState: RTCICEConnectionState) {
             
             print("ICE state changed: \(RTCTypes.iceConnectionStates[newState.rawValue])")
+        
+        if(newState.rawValue == RTCICEConnectionDisconnected.rawValue) {
+            self.hangUpCallback();
+        }
     }
     
     func peerConnection(peerConnection: RTCPeerConnection!,
